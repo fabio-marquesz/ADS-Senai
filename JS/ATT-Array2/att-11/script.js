@@ -44,6 +44,9 @@ do {
                 console.log(email[contador]);
             }
             break;
+            default:
+                console.log("Opção inválida!");
+            break;
 
     }
 
