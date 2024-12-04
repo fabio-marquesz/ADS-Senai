@@ -7,7 +7,7 @@ e) de todos os elementos da matriz.
 f) Escreva estas somas e a matriz.*/
 
 let matriz = [];
-let somaLinha = 0, somaColuna = 0, diagonalPrimaria = 0, diagonalSecundaria = 0;
+let somaLinha = 0, somaColuna = 0, diagonalPrimaria = 0, diagonalSecundaria = 0, somaMatriz = 0;
 
 
 for (let linha = 0; linha < 5; linha++){
@@ -17,10 +17,9 @@ for (let linha = 0; linha < 5; linha++){
     }
 }
 
-console.table(matriz)
-
 for (let linha = 0; linha < 5; linha++){
     for (let coluna = 0; coluna < 5 ; coluna++){
+        
         if (coluna == linha){
             diagonalPrimaria +=  matriz[linha][coluna];
         }
@@ -29,12 +28,26 @@ for (let linha = 0; linha < 5; linha++){
             diagonalSecundaria +=  matriz[linha][coluna];
         }
 
-        if (coluna == 2 && linha == [0, 1, 2, 3, 4] ){
-            somaColuna += matriz[linha][coluna];
+        if (coluna == 1 ){
+            somaColuna += matriz[linha][1];
+        }
+
+        if (linha == 3){
+            somaLinha += matriz[4][coluna];
         }
     }
 }
 
-console.log(diagonalPrimaria);
-console.log(diagonalSecundaria);
-console.log(somaColuna);
+for (let linha = 0; linha < matriz.length; linha++) {
+    for (let coluna = 0; coluna < matriz[linha].length; coluna++) {
+        somaMatriz += matriz[linha][coluna];
+    }
+}
+
+console.table(matriz);
+console.log('A soma da linha 4 é: ', somaLinha);
+console.log('A soma da coluna 2 é: ', somaColuna);
+console.log('A soma da diagonal principal é: ', diagonalPrimaria);
+console.log('A soma da secundaria é: ', diagonalSecundaria);
+console.log('A soma de toda matriz é: ', somaMatriz);
+

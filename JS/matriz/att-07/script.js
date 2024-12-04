@@ -2,7 +2,7 @@
 
 
 let matriz = [];
-let maior = 0, menor = 999;
+let maior = 0, menor = 999, linhaMenor = 0, colunaMenor = 0, linhaMaior = 0, colunaMaior = 0;
 
 
 for (let linha = 0; linha < 7; linha++){
@@ -19,14 +19,22 @@ for (let linha = 0; linha < 7; linha++){
     for (let coluna = 0; coluna < 4; coluna++){
         if (matriz[linha][coluna] < menor){
             menor = matriz[linha][coluna];
-            console.log('O menor valor:', menor, 'esta na linha ', linha ,' e na coluna ', coluna);
+            linhaMenor = linha;
+            colunaMenor = coluna;
+            
         }
 
         if (matriz[linha][coluna] > maior){
             maior = matriz[linha][coluna];
-            console.log('O maior valor:', maior , ' esta na linha ', linha ,' e na coluna ', coluna);
+            linhaMaior = linha;
+            colunaMaior =  coluna;
+            
         }
     }
 }
+
+
+console.log('O menor valor:', menor, 'esta na linha ', linhaMenor ,' e na coluna ', colunaMenor);
+console.log('O maior valor:', maior , ' esta na linha ', linhaMaior ,' e na coluna ', colunaMaior);
 
 
